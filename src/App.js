@@ -1,34 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-const axios = require('axios').default;
+import axios from "axios";
+import React from "react";
+import "./App.css";
 
-function dane()
-{
-  return axios.get('https://content.guardianapis.com/search?&q=debate&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db');
+const baseURL = "https://content.guardianapis.com/search?api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+
+//jezeli kliknie na kategorie to zmieni warunki wejscia 
+
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data.response);
+      console.log(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+
+  function navbar()
+  {
+     
+  }
   
-  /*.then(resp => {
-
-    let prz = '<p>{resp}</p>';
-    return prz;
-  });*/
+  
+  function boxes()
+  {
+    let tablica =[];
+    for (let i=0; i<10;i++)
+    {
+      //albo dodac window.open(), https://developer.mozilla.org/en-US/docs/Web/API/Window/open
+      tablica.push(<div className='box'><a href={post.results[i].webUrl} rel="noopener noreferrer" target="_blank"><h1>{post.results[i].webTitle}</h1></a></div>)
+      //dodaj na później
+    }
+    return tablica
+  }
+  
+    return (
+      
+        boxes()
+    );
 }
-
-
-
-/*axios.get('https://content.guardianapis.com/search?&q=debate&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db').then(resp => {
-
-    console.log(resp.data.response.results);
-});*/
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>ta</p>
-      </header>
-    </div>
-  );
-}
-
-export default App;
