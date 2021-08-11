@@ -1,45 +1,29 @@
-import axios from "axios";
 import React from "react";
+import { instance } from "./api/base";
 import "./App.css";
+import Box from "./components/Box";
 
-const baseURL = "https://content.guardianapis.com/search?api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db";
+
+
 
 export default function App() {
-  const [post, setPost] = React.useState(null);
+  const [posts, setPost] = React.useState([]);
 
-//jezeli kliknie na kategorie to zmieni warunki wejscia 
+  //jezeli kliknie na kategorie to zmieni warunki wejscia 
 
 
   React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data.response);
+    instance.get('/posts').then((response) => {
+      setPost(response.data);
       console.log(response.data);
     });
   }, []);
 
-  if (!post) return null;
+  return (
+    <div>
+      <div>{posts.map((post) => (<Box name={post.title} name2={post.body} />))}</div>
+    </div>
 
 
-  function navbar()
-  {
-     
-  }
-  
-  
-  function boxes()
-  {
-    let tablica =[];
-    for (let i=0; i<10;i++)
-    {
-      //albo dodac window.open(), https://developer.mozilla.org/en-US/docs/Web/API/Window/open
-      tablica.push(<div className='box'><a href={post.results[i].webUrl} rel="noopener noreferrer" target="_blank"><h1>{post.results[i].webTitle}</h1></a></div>)
-      //dodaj na później
-    }
-    return tablica
-  }
-  
-    return (
-      
-        boxes()
-    );
+  );
 }
