@@ -2,6 +2,8 @@ import React from "react";
 import { instance } from "./api/base";
 import "./App.css";
 import Box from "./components/Box";
+import Header from "./components/Header";
+
 
 
 
@@ -11,7 +13,6 @@ export default function App() {
 
   //jezeli kliknie na kategorie to zmieni warunki wejscia 
 
-
   React.useEffect(() => {
     instance.get('/posts').then((response) => {
       setPost(response.data);
@@ -20,10 +21,17 @@ export default function App() {
   }, []);
 
   return (
-    <div>
-      <div>{posts.map((post) => (<Box name={post.title} name2={post.body} />))}</div>
+    <div className="App">
+      
+      <div className="menu">
+        <Header title={'News'} color={'red'}/>
+        <Header title={'Sport'} color={'green'}/>
+        <Header title={'World News'} color={'blue'}/>
+        <Header title={'Politics'}/>
+      </div>
+      
+      <div>{posts.map((post) => (<Box key={post.id} name={post.title} name2={post.body} />))}</div>
     </div>
-
 
   );
 }
