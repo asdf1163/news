@@ -3,9 +3,7 @@ import { instance } from "./api/base";
 import "./App.css";
 import Box from "./components/Box";
 import Header from "./components/Header";
-
-
-
+import Kategorie from "./components/Kategorie";
 
 
 export default function App() {
@@ -14,9 +12,9 @@ export default function App() {
   //jezeli kliknie na kategorie to zmieni warunki wejscia 
 
   React.useEffect(() => {
-    instance.get('/posts').then((response) => {
-      setPost(response.data);
-      console.log(response.data);
+    instance.get('/search?show-elements=image&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db').then((response) => {
+      setPost(response.data.response.results);
+      console.log(response.data.response.results);
     });
   }, []);
 
@@ -24,13 +22,12 @@ export default function App() {
     <div className="App">
       
       <div className="menu">
-        <Header title={'News'} color={'red'}/>
-        <Header title={'Sport'} color={'green'}/>
-        <Header title={'World News'} color={'blue'}/>
-        <Header title={'Politics'}/>
+        {Kategorie.map((option) => (<Header key={option.id} title={option.name} img={option.img}/>))}
       </div>
-      
-      <div>{posts.map((post) => (<Box key={post.id} name={post.title} name2={post.body} />))}</div>
+
+      <div className="article_list">
+          {posts.map((post) => (<Box key={post.id} name={post.webTitle} link={post.webUrl}/>))}        
+      </div>
     </div>
 
   );

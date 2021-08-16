@@ -1,8 +1,12 @@
+import Joker from '../media/images/joker.jpg';
+import Arrow from '../media/images/arrow.png';
+
 const Box = (props) => {
     return (
-        <div>
-            <div>{props.name}</div>
-            <div>{props.name2}</div>
+        <div className='article'>
+            <div className='info'><img src={Arrow} alt='brak'></img></div>
+            <div className='img'><img src={Joker} alt=''></img></div>
+            <div className='text'><a href={props.link}>{props.name}</a></div>
         </div>
     );
 }
