@@ -69,6 +69,32 @@ a
   overflow: hidden;
 }
 
+
+
+.article .text
+{
+  position: absolute;
+  bottom: 0;
+  height: 58px;
+  width: 300px;
+  background-color: rgba(170, 170, 170, 0.555);
+  padding: 10px;
+}
+
+.article .img
+{
+  
+  border-bottom: 1px solid black;
+} 
+
+.article .img img
+{
+  height:400px ;
+  width:300px;
+  object-fit:cover;
+  position: absolute;
+}
+
 .article .pozniej
 {
   position: absolute;
@@ -79,41 +105,11 @@ a
 
 }
 
-.article .text
-{
-  position: absolute;
-  bottom: 0;
-  height: 58px;
-  background-color: rgba(170, 170, 170, 0.555);
-  padding: 10px;
-}
-
-.article .img
-{
-  width: auto;
-  height: auto;
-  border-bottom: 1px solid black;
-} 
-
-.article .img img
-{
-  position: absolute;
-  object-fit: contain;
-}
-
-.article .info img
-{
-  position: absolute;
-  object-fit: contain;
-  z-index: 1;
-  bottom: 70px;
-  right:36%;
-}
-
 .article .pozniej button
 {
   border: none;
-  padding:15px;
+  height: 40px;
+  width: 100px;
   border-radius: 20px;
   background-color: rgb(105, 105, 105);
   color: rgb(255, 255, 255);

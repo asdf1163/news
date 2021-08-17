@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
-//const [click,onClick] = useState();
-class Header extends React.Component {
+function Header({id, name, title, img, onZmiana})
+{
+  return (
+  <button className="option" data={id} onClick={() => onZmiana(id)}><img src={img} alt={name}></img>{title}</button>
+  //drugi klik 
+  );
+}
+
+
+/*class Header extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -33,7 +40,7 @@ class Header extends React.Component {
         </button>
       );
     }
-  }
+  }*/
 // const Header = (props) => {
 //     return (<button className="option" data={props.id} onClick={onClick}><img src={props.img} alt={props.name}></img>{props.title}</button>);
 // }
