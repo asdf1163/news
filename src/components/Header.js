@@ -1,19 +1,42 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const onClick = () => {
-        return (
-//             instance.get('/search?api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db&q='+props.id).then((response) => {
-            //Jak zmienic opcje w menu
-            //popracowac nad zmiana w API
-             
-            console.log("dziala")
-        );
-}
+//const [click,onClick] = useState();
+class Header extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+          data: props.id,
+          img: {
+               src:props.img
+          },
+          title: props.title,
+          alt: props.name,
+          bgcolor: 'none'
+        };
 
+        this.handleClick = this.handleClick.bind(this);
+    }
+  
+    handleClick() {
+      this.setState(prevState => ({
+        isActiveIndex: !prevState.isActiveIndex
+      }));
+    }
 
-const Header = (props) => {
-    return (<button className="option" onClick={onClick} style={{backgroundColor: props.color}}><img src={props.img} alt={props.name}></img>{props.title}</button>);
-}
+    
+  
+    render() {
+      return (
+        <button className="option" onClick={this.handleClick} style={this.state.isActiveIndex?{backgroundColor: 'red'}:{backgroundColor: ''}}>
+            <img src={this.state.img.src} alt={this.state.name}></img>{this.state.title}
+        </button>
+      );
+    }
+  }
+// const Header = (props) => {
+//     return (<button className="option" data={props.id} onClick={onClick}><img src={props.img} alt={props.name}></img>{props.title}</button>);
+// }
 
 Header.defaultProps ={
     title: 'Opis',

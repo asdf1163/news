@@ -5,22 +5,22 @@ import World from '../media/images/world.svg';
 
 const Kategorie = [
     { 
-      id:'News', 
+      id:'news', 
       name:'News',
       img: Newspaper,
     },
     { 
-      id:'Sport', 
+      id:'sport', 
       name:'Sport',
       img: Basketball,
     },
     { 
-      id:'World News', 
+      id:'world', 
       name:'World News',
       img: World,
     },
     { 
-      id:'Politics', 
+      id:'politics', 
       name:'Politics',
       img: Capitol,
     },

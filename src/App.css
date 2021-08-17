@@ -2,8 +2,10 @@
 
 
 .App {
-  box-sizing: content-box;
+  box-sizing:content-box;
   padding:15px;
+  height: 700px;
+  min-width: max-content;
   margin:5px;
   border: 1px solid black;
   border-radius: 20px;
@@ -18,7 +20,7 @@
 } 
 
 
-.option
+.menu .option
 {
   font-family: 'Cabin', sans-serif;
   min-width: 200px;
@@ -30,6 +32,7 @@
   padding: 20px 50px;
   color: white;
   text-decoration: none;
+  background-color: gray;
 }
 
 .menu .option img
@@ -45,9 +48,14 @@ a
   color: black;
 }
 
+.article_list_position
+{
+  position:absolute;
+}
+
 .article_list
 {
-  position: absolute;
+  position: relative;
   display: flex;
 }
 
@@ -58,8 +66,17 @@ a
   height: 400px;
   margin: 0px 20px;
   position: relative;
-  display:inline-block;
   overflow: hidden;
+}
+
+.article .pozniej
+{
+  position: absolute;
+  display: block;
+  padding-left: 36%;
+  bottom:90px;
+  z-index: 10;
+
 }
 
 .article .text
@@ -91,4 +108,27 @@ a
   z-index: 1;
   bottom: 70px;
   right:36%;
+}
+
+.article .pozniej button
+{
+  border: none;
+  padding:15px;
+  border-radius: 20px;
+  background-color: rgb(105, 105, 105);
+  color: rgb(255, 255, 255);
+  transition-duration: 0.3s;
+  opacity: 0.5;
+}
+
+.article .pozniej button:hover
+{
+  opacity: 1;
+}
+
+
+.fav
+{
+  position: absolute;
+  right:20px;
 }
