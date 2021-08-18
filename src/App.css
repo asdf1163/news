@@ -96,7 +96,7 @@ a
   position: absolute;
 }
 
-.article .pozniej
+.article .later
 {
   position: absolute;
   display: block;
@@ -106,7 +106,7 @@ a
 
 }
 
-.article .pozniej button
+.article .later button
 {
   border: none;
   height: 40px;
@@ -118,7 +118,7 @@ a
   opacity: 0.5;
 }
 
-.article .pozniej button:hover
+.article .later button:hover
 {
   opacity: 1;
 }

@@ -1,49 +1,11 @@
 import PropTypes from 'prop-types';
 
-function Header({id, name, title, img, onZmiana})
+function Header({id, name, title, img, handleChange})
 {
   return (
-  <button className="option" data={id} onClick={() => onZmiana(id)}><img src={img} alt={name}></img>{title}</button>
-  //drugi klik 
+  <button className="option" data={id} onClick={() => handleChange(id)}><img src={img} alt={name}></img>{title}</button>
   );
 }
-
-
-/*class Header extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-          data: props.id,
-          img: {
-               src:props.img
-          },
-          title: props.title,
-          alt: props.name,
-          bgcolor: 'none'
-        };
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-  
-    handleClick() {
-      this.setState(prevState => ({
-        isActiveIndex: !prevState.isActiveIndex
-      }));
-    }
-
-    
-  
-    render() {
-      return (
-        <button className="option" onClick={this.handleClick} style={this.state.isActiveIndex?{backgroundColor: 'red'}:{backgroundColor: ''}}>
-            <img src={this.state.img.src} alt={this.state.name}></img>{this.state.title}
-        </button>
-      );
-    }
-  }*/
-// const Header = (props) => {
-//     return (<button className="option" data={props.id} onClick={onClick}><img src={props.img} alt={props.name}></img>{props.title}</button>);
-// }
 
 Header.defaultProps ={
     title: 'Opis',

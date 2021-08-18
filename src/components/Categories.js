@@ -3,7 +3,7 @@ import Basketball from '../media/images/basketball.svg';
 import Capitol from '../media/images/capitol.svg';
 import World from '../media/images/world.svg';
 
-const Kategorie = [
+const Categories = [
     { 
       id:'news', 
       name:'News',
@@ -25,4 +25,4 @@ const Kategorie = [
       img: Capitol,
     },
   ];
-export default Kategorie;
+export default Categories;

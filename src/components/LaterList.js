@@ -3,10 +3,11 @@ import { BsClockHistory, BsX} from "react-icons/bs";
 
 const Button = () => {
     
-    const [b_lista, setLista] = useState(true)
+
+    const [button_lista, setLista] = useState(true)
 
     const onClick = () => {
-        return setLista(!b_lista);
+        return setLista(!button_lista);
     }
 
     const lista = () =>{
@@ -15,12 +16,10 @@ const Button = () => {
         );
     }
 
-//
-
     return (
         <div>
-            <p onClick={() => onClick()}> {b_lista ? <BsClockHistory style={{height: '35px', width: '35px'}}/> : <BsX style={{color: 'red', height: '35px', width: '35px'}}/>}</p>
-            <>{b_lista ? '' : lista()}</>
+            <p onClick={() => onClick()}> {button_lista ? <BsClockHistory style={{height: '35px', width: '35px'}}/> : <BsX style={{color: 'red', height: '35px', width: '35px'}}/>}</p>
+            <>{button_lista ? '' : lista()}</>
         </div>
         
 

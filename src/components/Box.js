@@ -1,14 +1,12 @@
 import Later from './Later';
 import Joker from '../media/images/joker.jpg';
-//import Arrow from '../media/images/arrow.png';
 
-const Box = (props) => {
+const Box = ({link, name}) => {
     return (
         <div className='article'>
-            {/* <div className='info'><img src={Arrow} alt='brak'></img></div> */}
-            <div className="pozniej"><Later link={props.link} name_article={props.name}/></div>
+            <div className="later"><Later link={link} nameArticle={name}/></div>
             <div className='img'><img src={Joker} alt=''></img></div>
-            <div className='text'><a href={props.link}>{props.name}</a></div>
+            <div className='text'><a href={link}>{name}</a></div>
         </div>
     );
 }

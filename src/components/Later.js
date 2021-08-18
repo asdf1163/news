@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-  const Later = (props) => {
+  const Later = ({link, nameArticle}) => {
     const [toggle, setToggle] = useState(true)
 
     const addToList = (link) => {
-      return console.log(props.link)
+      return console.log(link)
     }
     
 
@@ -12,7 +12,7 @@ import React, {useState} from 'react'
     {
       return(
         setToggle(!toggle),
-        addToList(props.link)
+        addToList(link)
       )
     }
 
