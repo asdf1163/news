@@ -1,36 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-class Toggle extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-          id: 0,
-          isToggleOn: true,
-          name_article: props.name_article,
-          link: props.link,
-        };
+  const Later = (props) => {
+    const [toggle, setToggle] = useState(true)
 
-  
-      // This binding is necessary to make `this` work in the callback
-      this.handleClick = this.handleClick.bind(this);
+    const addToList = (link) => {
+      return console.log(props.link)
     }
-  
     
 
-    handleClick() {
-      this.setState(prevState => ({
-        isToggleOn: !prevState.isToggleOn
-      }));
+    const handleClick = () =>
+    {
+      return(
+        setToggle(!toggle),
+        addToList(props.link)
+      )
     }
-  
-    render() {
+
       return (
         <div>
-          <button onClick={this.handleClick} style={this.state.isToggleOn?{backgroundColor: ''}:{backgroundColor: 'red'}}>
-          {this.state.isToggleOn ? 'Na później' : 'Cofnij'}
+          <button onClick={handleClick} style={toggle?{backgroundColor: ''}:{backgroundColor: 'red'}}>
+          {toggle ? 'Na później' : 'Cofnij'}
           </button>
         </div>
       );
-    }
   }
-  export default Toggle
+  export default Later

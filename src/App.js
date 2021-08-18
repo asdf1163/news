@@ -4,6 +4,7 @@ import "./App.css";
 import Box from "./components/Box";
 import Header from "./components/Header";
 import Kategorie from "./components/Kategorie";
+import LaterList from './components/LaterList'
 
 
 
@@ -20,7 +21,7 @@ export default function App() {
       console.log(search)
     );
   }
-
+  
   let [search, setSearch] = React.useState('/search?show-elements=image&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db');
 
   React.useEffect (() => {
@@ -35,7 +36,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="fav"><button>Na później</button></div>
+      <div className="fav"><LaterList /></div>
       <div className="menu">
         {Kategorie.map((option) => (<Header key={option.id} id={option.id} title={option.name} img={option.img} onZmiana={zmiana} />))}
       </div>

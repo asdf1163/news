@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 } 
 
 
@@ -126,5 +127,20 @@ a
 .fav
 {
   position: absolute;
+  z-index: 20;
   right:20px;
+}
+
+.fav .lista
+{
+  background-color: beige;
+  height: 400px;
+  width: 400px;
+  transition-duration: 2s;
+}
+
+.fav p
+{
+  position: absolute;
+  right: 10px;
 }
