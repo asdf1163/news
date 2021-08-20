@@ -131,11 +131,12 @@ a
   right:20px;
 }
 
-.fav .lista
+.fav .links
 {
   background-color: beige;
-  height: 400px;
+  height: 300px;
   width: 400px;
+  padding:80px 20px;
   transition-duration: 2s;
 }
 
@@ -143,4 +144,9 @@ a
 {
   position: absolute;
   right: 10px;
+}
+
+li
+{
+  font-size: 20px;
 }

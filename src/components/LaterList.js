@@ -1,25 +1,29 @@
 import React, {useState} from 'react'
 import { BsClockHistory, BsX} from "react-icons/bs";
 
-const Button = () => {
+const Button = ({list}) => {
     
 
-    const [button_lista, setLista] = useState(true)
+    const [button_list, setList] = useState(true)
 
     const onClick = () => {
-        return setLista(!button_lista);
+        return setList(!button_list);
     }
 
-    const lista = () =>{
+    const listItems = list.map((id) => <li>{id}</li>);
+
+    const lista = ({list}) =>{
         return (
-            <div className="lista"></div>
+            <div className="links">
+                    {listItems}
+            </div>
         );
     }
 
     return (
         <div>
-            <p onClick={() => onClick()}> {button_lista ? <BsClockHistory style={{height: '35px', width: '35px'}}/> : <BsX style={{color: 'red', height: '35px', width: '35px'}}/>}</p>
-            <>{button_lista ? '' : lista()}</>
+            <p onClick={() => onClick()}> {button_list ? <BsClockHistory style={{height: '35px', width: '35px'}}/> : <BsX style={{color: 'red', height: '35px', width: '35px'}}/>}</p>
+            <>{button_list ? '' : lista({list})}</>
         </div>
         
 
