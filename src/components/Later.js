@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+//import React, { useState } from 'react'
 
-const Later = ({link, setList, list}) => {
-  const [toggle, setToggle] = useState(true)
+const Later = ({link, setList, list, toggle, setToggle}) => {
+  //const [toggle, setToggle] = useState(true)
+  //console.log(setToggle)
 
   const addToList = (link) => {
     setList(array => [...array, link])
   }
 
-  const deleteFromList = (link, list, setList) => {
+  const deleteFromList = (link, list) => {
     setList(list.filter((option) => option !== link))
   }
 
-  const handleClick = ({link, list, setList}) => {
-    toggle ? addToList(link):deleteFromList(link, list, setList)
+  const handleClick = ({link, list}) => {
+    toggle ? addToList(link):deleteFromList(link, list)
     setToggle(!toggle)
   }
 
-  // const existInArray = (link, list) => {
-  //       list.map((option) => option === link)? setToggle(false) : setToggle(true)
-  // }
+  //console.log('exist: '+ setToggle(link, list))
+
 
   return (
     <div>
