@@ -1,8 +1,13 @@
-//import React, { useState } from 'react'
+import React, { useState } from 'react'
 
-const Later = ({link, setList, list, toggle, setToggle}) => {
+const Later = ({link, changeList }) => {
   //const [toggle, setToggle] = useState(true)
   //console.log(setToggle)
+
+  
+  const [list, setList] = useState([]);
+
+  const [toggle,setToggle] = useState(true);
 
   const addToList = (link) => {
     setList(array => [...array, link])
@@ -16,7 +21,6 @@ const Later = ({link, setList, list, toggle, setToggle}) => {
     toggle ? addToList(link):deleteFromList(link, list)
     setToggle(!toggle)
   }
-
   //console.log('exist: '+ setToggle(link, list))
 
 

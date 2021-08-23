@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { BsClockHistory, BsX} from "react-icons/bs";
 
-const Button = ({list}) => {
+const Button = ({list, changeList}) => {
     
     const [button_list, setList] = useState(true)
 
