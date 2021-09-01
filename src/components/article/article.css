@@ -48,9 +48,3 @@
 .article .later button:hover {
     opacity: 1;
 }
-
-/* @media screen and (max-width: 600px) {
-    .article {
-      background-color: olive;
-    }
-  } */
