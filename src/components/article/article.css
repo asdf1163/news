@@ -3,7 +3,7 @@
     border: 1px solid black;
     width: 300px;
     height: 430px;
-    margin: 0 20px 40px;
+    margin: 0 10px 40px;
     position: relative;
 }
 
@@ -13,12 +13,9 @@
     height: 80px;
     width: 280px;
     background-color: rgba(170, 170, 170, 0.555);
+    overflow-wrap: break-word;
+    overflow: hidden;
     padding: 10px;
-}
-
-.article .img {
-
-    border-bottom: 1px solid black;
 }
 
 .article .img img {
@@ -52,3 +49,8 @@
     opacity: 1;
 }
 
+/* @media screen and (max-width: 600px) {
+    .article {
+      background-color: olive;
+    }
+  } */
