@@ -66,7 +66,7 @@ a {
 
 .fav .links {
     position: absolute;
-    right: 5px;
+    right: 0px;
     z-index: 10;
     background-color: beige;
     height: 300px;
@@ -86,7 +86,6 @@ a {
 li {
     margin-top: 10px;
 }
-
 
 @media screen and (max-width: 900px) {
     .menu {
@@ -110,10 +109,5 @@ li {
         max-width: 75px;
         height: 60px;
         margin-bottom: 10px;
-    }
-
-    .fav .links
-    {
-        max-width: 295px;
     }
 }
