@@ -12,12 +12,13 @@
     position: absolute;
     bottom: 0;
     height: 80px;
-    width: fit-content;
+    width: 282px;
     background-color: rgba(170, 170, 170, 0.555);
     overflow-wrap: break-word;
     overflow: hidden;
     padding: 10px;
 }
+
 
 .article .img img {
     height: 430px;
