@@ -5,13 +5,14 @@
     height: 430px;
     margin: 0 10px 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .article .text {
     position: absolute;
     bottom: 0;
     height: 80px;
-    width: 280px;
+    width: fit-content;
     background-color: rgba(170, 170, 170, 0.555);
     overflow-wrap: break-word;
     overflow: hidden;

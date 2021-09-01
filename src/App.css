@@ -110,3 +110,31 @@ li {
         margin-bottom: 10px;
     }
 }
+
+@media screen and (max-width: 375px) {
+    
+    .menu 
+    {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .menu .option
+    {
+        width: fit-content;
+        height: 120px;
+        border-radius: 20px;
+        padding: 0px;
+        margin: 15px 2px 5px 2px;
+        
+    }
+    
+    .fav .links {
+        right: -5px;
+        width: 90%;
+    }
+
+    .fav p {
+        right: 0;
+    }
+}
