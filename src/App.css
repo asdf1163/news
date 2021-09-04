@@ -1,151 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
 
-
 .App {
-  box-sizing:content-box;
-  padding:15px;
-  height: 700px;
-  min-width: max-content;
-  margin:5px;
-  border: 1px solid black;
-  border-radius: 20px;
+    box-sizing: content-box;
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
-.menu
-{
-    position:static;
+.menu {
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
-} 
-
-
-.menu .option
-{
-  font-family: 'Cabin', sans-serif;
-  min-width: 200px;
-  max-width: 200px;
-  margin: 50px 10px;
-  border-radius: 30px;
-  position: relative;
-  border: 3px solid black;
-  padding: 20px 50px;
-  color: white;
-  text-decoration: none;
-  background-color: gray;
 }
 
-.menu .option img
-{
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
+.menu .option {
+    font-family: 'Cabin', sans-serif;
+    width: 200px;
+    margin: 50px 10px;
+    border-radius: 30px;
+    position: relative;
+    border: 3px solid black;
+    padding: 20px 50px;
+    color: white;
+    text-decoration: none;
 }
 
-a
+.disactive
 {
-  text-decoration: none;
-  color: black;
+    background-color: gray;
 }
 
-.article_list_position
+.active
 {
-  position:absolute;
+    background-color: green;
 }
 
-.article_list
-{
-  position: relative;
-  display: flex;
+.menu .option img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
 }
 
-.article
-{
-  border: 1px solid black;
-  width: 300px;
-  height: 430px;
-  margin: 0px 20px;
-  position: relative;
-  
+a {
+    text-decoration: none;
+    color: black;
 }
 
-
-
-.article .text
-{
-  position: absolute;
-  bottom: 0;
-  height: 80px;
-  width: 280px;
-  background-color: rgba(170, 170, 170, 0.555);
-  padding: 10px;
+.article_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.article .img
-{
-  
-  border-bottom: 1px solid black;
-} 
-
-.article .img img
-{
-  height:430px ;
-  width:300px;
-  object-fit:cover;
-  position: absolute;
+.fav {
+    box-sizing: content-box;
+    position: sticky;
+    top: 10px;
+    z-index: 20;
+    right: 20px;
 }
 
-.article .later
-{
-  position: absolute;
-  display: block;
-  padding-left: 36%;
-  bottom: 110px;
-  z-index: 10;
+.fav .links {
+    position: absolute;
+    right: 0px;
+    z-index: 10;
+    background-color: beige;
+    height: 300px;
+    width: 400px;
+    padding: 80px 20px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
+
+.fav p {
+    position: absolute;
+    right: 10px;
+    z-index: 11;
 
 }
 
-.article .later button
-{
-  border: none;
-  height: 40px;
-  width: 100px;
-  border-radius: 20px;
-  background-color: rgb(105, 105, 105);
-  color: rgb(255, 255, 255);
-  transition-duration: 0.3s;
-  opacity: 0.5;
+li {
+    margin-top: 10px;
 }
 
-.article .later button:hover
-{
-  opacity: 1;
+@media screen and (max-width: 900px) {
+    .menu {
+        box-sizing: content-box;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .menu .option{
+        min-width: 80px;
+        max-width: 95px;
+        height: 120px;
+        border-radius: 20px;
+        padding: 0px;
+        margin: 20px 5px;
+    }
+
+    .menu .option img
+    {
+        min-width: 60px;
+        max-width: 75px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .fav .links {
+        right: -5px;
+        width: 90%;
+    }
 }
 
+@media screen and (max-width: 375px) {
+    
+    .menu 
+    {
+        display: flex;
+        margin-top: 10px;
+    }
 
-.fav
-{
-  position: absolute;
-  z-index: 20;
-  right:20px;
-}
+    .menu .option
+    {
+        width: fit-content;
+        height: 120px;
+        border-radius: 20px;
+        padding: 0px;
+        margin: 15px 2px 20px 2px;
+        
+    }
+    
+    .fav .links {
+        right: -5px;
+        width: 90%;
+    }
 
-.fav .links
-{
-  background-color: beige;
-  height: 300px;
-  width: 400px;
-  padding:80px 20px;
+    .fav p {
+        right: 0;
+    }
 }
-
-.fav p
-{
-  position: absolute;
-  right: 10px;
-}
- 
-li
-{
-  margin-top: 10px;
-} 

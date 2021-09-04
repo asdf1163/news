@@ -1,29 +1,40 @@
-import React, {useState} from 'react'
-import { BsClockHistory, BsX} from "react-icons/bs";
+import React, { useState } from 'react'
+import { BsClockHistory, BsX, BsTrash } from "react-icons/bs";
 
-const Button = ({list, changeList}) => {
-    
-    const [button_list, setList] = useState(true)
+const Button = ({ list, DeleteFromList }) => {
+
+    const [button_list, setButtonList] = useState(true)
 
     const onClick = () => {
-        return setList(!button_list);
+        return setButtonList(!button_list);
     }
 
-    const listItems = list.map((id) => <li key={id}>{id}</li>);
+    const DeleteOption = (link) => {
+        DeleteFromList({ link, remove: true })
+    }
 
-    const lista = (id) => {
+    const listItems = list.map((id) =>
+        <div key={id}>
+            <li><a href={id}>{id}</a></li>
+            <BsTrash style={{ color: 'red', height: '35px', width: '35px', cursor: 'pointer' }} onClick={() => DeleteOption(id)} />
+        </div>
+    );
 
+    const linkList = () => {
         return (
             <div className="links">
-                   <ul>{listItems}</ul>
+                <ul>{listItems}</ul>
             </div>
         );
     }
 
     return (
         <div>
-            <p key={'LaterList'} onClick={() => onClick()}> {button_list ? <BsClockHistory style={{height: '35px', width: '35px', cursor: 'pointer' }}/> : <BsX style={{color: 'red', height: '35px', width: '35px', cursor: 'pointer'}}/>}</p>
-            <>{button_list ? '' : lista({list})}</>
+            <p key={'LaterList'}
+                onClick={() => onClick()}> {button_list ?
+                    <BsClockHistory style={{ height: '35px', width: '35px', cursor: 'pointer' }} /> :
+                    <BsX style={{ color: 'red', height: '35px', width: '35px', cursor: 'pointer' }} />}</p>
+            <>{button_list ? '' : linkList()}</>
         </div>
     );
 }

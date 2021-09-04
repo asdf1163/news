@@ -1,0 +1,52 @@
+
+.article {
+    border: 1px solid black;
+    width: 300px;
+    height: 430px;
+    margin: 0 10px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.article .text {
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    width: 282px;
+    background-color: rgba(170, 170, 170, 0.555);
+    overflow-wrap: break-word;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+.article .img img {
+    height: 430px;
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.article .later {
+    position: absolute;
+    display: block;
+    padding-left: 36%;
+    bottom: 110px;
+    z-index: 10;
+
+}
+
+.article .later button {
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgb(105, 105, 105);
+    color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    opacity: 0.5;
+}
+
+.article .later button:hover {
+    opacity: 1;
+}
