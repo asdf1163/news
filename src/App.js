@@ -4,13 +4,16 @@ import "./App.css";
 import Box from "./components/article/Box";
 import Header from "./components/Header";
 import LaterList from './components/LaterList'
+import { link } from './api/link';
+import Languages from './language/AvailableLanguages'
 
 export default function App() {
     const [posts, setPost] = useState([]);
     const [list, setList] = useState([]);
-    const [search, setSearch] = useState('/search?show-elements=image&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db');
+    const [search, setSearch] = useState(link);
 
     useEffect(() => {
+        console.log(search)
         instance.get(search).then((response) => {
             setPost(response.data.response.results);
         });
@@ -23,8 +26,7 @@ export default function App() {
     }
 
     return (
-        <div className="App">
-
+        <div className="App">            
             <div className="fav">
                 <LaterList list={list} DeleteFromList={handleChangeList} />
             </div>
@@ -39,7 +41,9 @@ export default function App() {
                     }
                 </div>
             </div>
-
+            <div className="lang">
+                <Languages/>
+            </div>
         </div >
     );
 }

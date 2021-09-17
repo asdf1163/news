@@ -1,0 +1,1 @@
+export const link = '/search?show-elements=image&api-key=86069387-0efe-47f5-a62d-bc65c5e9e7db';

@@ -15,8 +15,8 @@ const Button = ({ list, DeleteFromList }) => {
 
     const listItems = list.map((id) =>
         <div key={id}>
-            <li>{id}</li>
-            <BsTrash style={{ color: 'red', height: '35px', width: '35px', cursor: 'pointer' }} onClick={() => DeleteOption(id)} />
+            <li><a href={id}>{id}</a></li>
+            <BsTrash size={35} color={'red'} cursor={'pointer'} onClick={() => DeleteOption(id)} />
         </div>
     );
 
@@ -32,8 +32,8 @@ const Button = ({ list, DeleteFromList }) => {
         <div>
             <p key={'LaterList'}
                 onClick={() => onClick()}> {button_list ?
-                    <BsClockHistory style={{ height: '35px', width: '35px', cursor: 'pointer' }} /> :
-                    <BsX style={{ color: 'red', height: '35px', width: '35px', cursor: 'pointer' }} />}</p>
+                    <BsClockHistory size={35} cursor={'pointer'} /> :
+                    <BsX size={35} color={'red'} cursor={'pointer'} />}</p>
             <>{button_list ? '' : linkList()}</>
         </div>
     );

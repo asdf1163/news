@@ -3,6 +3,7 @@ import Basketball from '../media/images/basketball.svg';
 import Capitol from '../media/images/capitol.svg';
 import World from '../media/images/world.svg';
 
+
 const Categories = [
     { 
       id:'news', 
@@ -16,7 +17,7 @@ const Categories = [
     },
     { 
       id:'world', 
-      name:'World News',
+      name:'W_News',
       img: World,
     },
     { 

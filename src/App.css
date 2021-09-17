@@ -17,14 +17,23 @@
 
 .menu .option {
     font-family: 'Cabin', sans-serif;
-    width: 200px;
     margin: 50px 10px;
     border-radius: 30px;
     position: relative;
     border: 3px solid black;
-    padding: 20px 50px;
     color: white;
     text-decoration: none;
+}
+
+.menu button
+{
+    height: 20vh;
+    width: 10vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
 }
 
 .disactive
@@ -38,9 +47,9 @@
 }
 
 .menu .option img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
+    width: 10vw;
+    height: 10vh;
+    margin-bottom: 15px;
 }
 
 a {
@@ -79,11 +88,28 @@ a {
     position: absolute;
     right: 10px;
     z-index: 11;
-
 }
 
 li {
     margin-top: 10px;
+}
+
+.lang {
+    
+    position:static;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+}
+
+.lang button {
+    margin:5px;
+    padding: 10px;
+    font-size: medium;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
