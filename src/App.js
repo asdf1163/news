@@ -26,9 +26,12 @@ export default function App() {
     }
 
     return (
-        <div className="App">            
-            <div className="fav">
-                <LaterList list={list} DeleteFromList={handleChangeList} />
+        <div className="App">
+            <div className="top">
+                <div className="logo">RS<span className="logoType">news</span></div>
+                <div className="fav">
+                    <LaterList list={list} DeleteFromList={handleChangeList} />
+                </div>
             </div>
             <div className="menu">
                 {<Header setSearch={setSearch} />}
@@ -42,7 +45,7 @@ export default function App() {
                 </div>
             </div>
             <div className="lang">
-                <Languages/>
+                <Languages />
             </div>
         </div >
     );

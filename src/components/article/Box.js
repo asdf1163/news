@@ -1,5 +1,5 @@
 
-import Joker from '../../media/images/joker.jpg';
+import NewspaperImage from '../../media/images/newspaperBox.avif';
 import ToggleButton from "../ToggleButton";
 import './article.css';
 
@@ -15,7 +15,7 @@ const Box = ({ link, name, setList, list }) => {
                 <ToggleButton link={link} changeList={handleChange} ifExist={list.find((option) => option === link ? true : false)} />
             </div>
             <div className='img'>
-                <img src={Joker} alt='Joker' />
+                <img src={NewspaperImage} alt='NewspaperImage' />
             </div>
             <div className='text'><a href={link}>{name}</a></div>
         </div>

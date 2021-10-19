@@ -8,11 +8,39 @@
     border-radius: 20px;
 }
 
+.top
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo
+{
+    position: relative;
+    font-size: xx-large;
+    font-style: oblique;
+    font-weight: 600;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.logoType
+{
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 .menu {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
+    /* margin-top: 30px; */
 }
 
 .menu .option {
@@ -28,7 +56,8 @@
 .menu button
 {
     height: 20vh;
-    width: 10vw;
+    min-width: 10rem;
+    max-width: 10vw;
     position: relative;
     display: flex;
     justify-content: center;
@@ -66,10 +95,10 @@ a {
 
 .fav {
     box-sizing: content-box;
-    position: sticky;
-    top: 10px;
+    position: fixed;
     z-index: 20;
     right: 20px;
+    top: 15px
 }
 
 .fav .links {
@@ -116,7 +145,7 @@ li {
     .menu {
         box-sizing: content-box;
         display: flex;
-        margin-top: 10px;
+        /* margin-top: 10px; */
     }
 
     .menu .option{
@@ -137,7 +166,7 @@ li {
     }
     .fav .links {
         right: -5px;
-        width: 90%;
+        width: 80vw;
     }
 }
 
@@ -146,7 +175,7 @@ li {
     .menu 
     {
         display: flex;
-        margin-top: 10px;
+        /* margin-top: 10px; */
     }
 
     .menu .option
@@ -157,11 +186,6 @@ li {
         padding: 0px;
         margin: 15px 2px 20px 2px;
         
-    }
-    
-    .fav .links {
-        right: -5px;
-        width: 90%;
     }
 
     .fav p {
